@@ -1,0 +1,13 @@
+#top {
+	vertical-layout: top
+}
+
+#bg {
+	vertical-layout: top
+	horizontal-layout: left
+}
+
+#colors {
+	orientation: horizontal
+	stack-spacing: 20
+}

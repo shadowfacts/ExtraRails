@@ -1,0 +1,27 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "rail_flat",
+		"textures": {
+			"rail": "extrarails:blocks/teleportingRail"
+		}
+	},
+	"variants": {
+		"shape": {
+			"north_south": {},
+			"east_west": {}
+		},
+		"facing": {
+			"north": {},
+			"south": {
+				"y": 180
+			},
+			"west": {
+				"y": -90
+			},
+			"east": {
+				"y": 90
+			}
+		}
+	}
+}

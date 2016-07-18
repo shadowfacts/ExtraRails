@@ -1,0 +1,36 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "rail_flat"
+	},
+	"variants": {
+		"shape": {
+			"north_south": {},
+			"east_west": {}
+		},
+		"facing": {
+			"north": {},
+			"south": {
+				"y": 180
+			},
+			"west": {
+				"y": -90
+			},
+			"east": {
+				"y": 90
+			}
+		},
+		"powered": {
+			"true": {
+				"textures": {
+					"rail": "extrarails:blocks/directionRail/active"
+				}
+			},
+			"false": {
+				"textures": {
+					"rail": "extrarails:blocks/directionRail/inactive"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,82 @@
+buildscript {
+	repositories {
+		jcenter()
+		maven {
+			name "forge"
+			url "http://files.minecraftforge.net/maven/"
+		}
+	}
+	dependencies {
+		classpath "net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT"
+	}
+}
+
+plugins {
+	id "com.matthewprenger.cursegradle" version "1.0.6"
+}
+
+apply plugin: "net.minecraftforge.gradle.forge"
+
+version = mc_version + "-" + mod_version
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+minecraft {
+	version = mc_version + "-" + forge_version
+	runDir = "run"
+
+	mappings = mcp_mappings
+
+	replaceIn "ExtraRails.java"
+	replace "@VERSION@", mod_version
+
+	useDepAts = true
+}
+
+processResources {
+	inputs.property "version", project.version
+	inputs.property "mcversion", project.minecraft.version
+
+	from (sourceSets.main.resources.srcDirs) {
+		include "mcmod.info"
+		expand "version": project.version, "mcversion": mc_version
+	}
+	from (sourceSets.main.resources.srcDirs) {
+		exclude "mcmod.info"
+	}
+}
+
+repositories {
+	maven {
+		name "shadowfacts"
+		url "http://mvn.rx14.co.uk/shadowfacts/"
+	}
+	maven {
+		url "http://dvs1.progwml6.com/files/maven"
+	}
+}
+
+dependencies {
+	deobfCompile group: "net.shadowfacts", name: "ShadowMC", version: mc_version + "-" + shadowmc_version
+	deobfCompile group: "mezz.jei", name: "jei_" + mc_version, version: jei_version
+}
+
+// curseforge {
+// 	apiKey = project.hasProperty("curseForgeApiKey") ? project.curseForgeApiKey : ""
+
+// 	project {
+// 		id = ""
+
+// 		addGameVersion "1.10.2"
+// 		addGameVersion "Java 8"
+
+// 		mainArtifact(jar) {
+// 			releaseType = "release"
+
+// 			relations {
+// 				requiredLibrary "shadowmc"
+// 			}
+// 		}
+// 	}
+// }
