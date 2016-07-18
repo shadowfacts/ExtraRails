@@ -91,15 +91,9 @@ public abstract class BlockExtraRailPowered extends BlockExtraRail {
 	@Nonnull
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		EnumRailDirection shape = EnumRailDirection.byMetadata(meta & 1);
-		EnumFacing facing;
-		int i = (meta >> 1) & 1;
-		if (shape == EnumRailDirection.EAST_WEST) {
-			facing = i == 1 ? EnumFacing.EAST : EnumFacing.WEST;
-		} else {
-			facing = i == 1 ? EnumFacing.NORTH : EnumFacing.SOUTH;
-		}
-		boolean powered = ((meta >> 2) & 1) == 1;
+		boolean powered = (meta & 1) == 1;
+		EnumRailDirection shape = EnumRailDirection.byMetadata((meta >> 1) & 1);
+		EnumFacing facing = EnumFacing.getHorizontal(meta >> 2);
 
 		return getDefaultState()
 				.withProperty(SHAPE, shape)
@@ -112,14 +106,9 @@ public abstract class BlockExtraRailPowered extends BlockExtraRail {
 		EnumRailDirection shape = state.getValue(SHAPE);
 		EnumFacing facing = state.getValue(FACING);
 		boolean powered = state.getValue(POWERED);
-		int meta = 0;
-		meta |= shape.getMetadata();
-		if ((shape == BlockRailBase.EnumRailDirection.EAST_WEST && facing == EnumFacing.EAST) || (shape == BlockRailBase.EnumRailDirection.NORTH_SOUTH && facing == EnumFacing.NORTH)) {
-			meta |= 0b10;
-		}
-		if (powered) {
-			meta |= 0b100;
-		}
+		int meta = powered ? 1 : 0;
+		meta |= shape.getMetadata() << 1;
+		meta |= facing.getHorizontalIndex() << 2;
 		return meta;
 	}
 

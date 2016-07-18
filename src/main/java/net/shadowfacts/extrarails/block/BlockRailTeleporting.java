@@ -89,13 +89,7 @@ public class BlockRailTeleporting extends BlockExtraRail {
 	@Deprecated
 	public IBlockState getStateFromMeta(int meta) {
 		EnumRailDirection shape = EnumRailDirection.byMetadata(meta & 1);
-		EnumFacing facing;
-		int i = (meta >> 1) & 1;
-		if (shape == EnumRailDirection.EAST_WEST) {
-			facing = i == 1 ? EnumFacing.EAST : EnumFacing.WEST;
-		} else {
-			facing = i == 1 ? EnumFacing.NORTH : EnumFacing.SOUTH;
-		}
+		EnumFacing facing = EnumFacing.getHorizontal(meta >> 1);
 
 		return getDefaultState()
 				.withProperty(SHAPE, shape)
@@ -108,9 +102,7 @@ public class BlockRailTeleporting extends BlockExtraRail {
 		EnumFacing facing = state.getValue(FACING);
 		int meta = 0;
 		meta |= shape.getMetadata();
-		if ((shape == BlockRailBase.EnumRailDirection.EAST_WEST && facing == EnumFacing.EAST) || (shape == BlockRailBase.EnumRailDirection.NORTH_SOUTH && facing == EnumFacing.NORTH)) {
-			meta |= 0b10;
-		}
+		meta |= facing.getHorizontalIndex() << 1;
 		return meta;
 	}
 
