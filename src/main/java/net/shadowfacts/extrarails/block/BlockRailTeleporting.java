@@ -1,6 +1,5 @@
 package net.shadowfacts.extrarails.block;
 
-import net.minecraft.block.BlockRailBase;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -12,6 +11,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
+import net.shadowfacts.extrarails.ERConfig;
 import net.shadowfacts.extrarails.ExtraRails;
 import net.shadowfacts.extrarails.block.base.BlockExtraRail;
 import net.shadowfacts.extrarails.tileentity.TileEntityRailTeleporting;
@@ -28,6 +28,10 @@ public class BlockRailTeleporting extends BlockExtraRail {
 		super(true);
 		setUnlocalizedName("extrarails.teleportingRail");
 		setRegistryName("teleportingRail");
+
+		if (!ERConfig.teleportingRailsEnabled) {
+			setCreativeTab(null);
+		}
 	}
 
 	@Override

@@ -41,6 +41,9 @@ public class ExtraRails {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		ERConfig.init(event.getModConfigurationDirectory());
+		ERConfig.load();
+
 		items.init();
 		blocks.init();
 		registerRecipes();
@@ -56,7 +59,10 @@ public class ExtraRails {
 	private void registerRecipes() {
 		GameRegistry.addRecipe(new ShapedOreRecipe(blocks.lockingRail, "I I", "ISI", "IsI", 'I', "ingotIron", 'S', "stickWood", 's', Items.SLIME_BALL));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(blocks.directionRail, 2), "I I", "ISI", "IRI", 'I', "ingotIron", 'S', "stickWood", 'R', Items.REPEATER));
-		GameRegistry.addRecipe(new ShapedOreRecipe(blocks.teleportingRail, "IEI", "ISI", "IEI", 'I', "ingotIron", 'E', "enderpearl", 'S', "stickWood"));
+
+		if (ERConfig.teleportingRailsEnabled) {
+			GameRegistry.addRecipe(new ShapedOreRecipe(blocks.teleportingRail, "IEI", "ISI", "IEI", 'I', "ingotIron", 'E', "enderpearl", 'S', "stickWood"));
+		}
 	}
 
 }
