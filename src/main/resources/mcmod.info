@@ -1,0 +1,16 @@
+[
+	{
+	  "modid": "ExtraRails",
+	  "name": "Extra Rails",
+	  "description": "Additional Minecart rails.",
+	  "version": "${version}",
+	  "mcversion": "${mcversion}",
+	  "url": "http://github.com/shadowfacts/ExtraRails",
+	  "updateUrl": "",
+	  "authorList": ["Shadowfacts"],
+	  "credits": "",
+	  "logoFile": "",
+	  "screenshots": [],
+	  "dependencies": []
+	}
+]
