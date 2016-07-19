@@ -38,8 +38,8 @@ public class BlockRailComparator extends BlockExtraRail {
 		int level = 0;
 		if (minecart instanceof IInventory) {
 			level = Container.calcRedstoneFromInventory((IInventory)minecart);
-		} else if (minecart.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH) || minecart instanceof IItemHandler) {
-			IItemHandler handler = minecart.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH) ? minecart.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH) : (IItemHandler)minecart;
+		} else if (minecart.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN) || minecart instanceof IItemHandler) {
+			IItemHandler handler = minecart.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH) ? minecart.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN) : (IItemHandler)minecart;
 			int slots = 0;
 			float filled = 0;
 			for (int i = 0; i < handler.getSlots(); i++) {
