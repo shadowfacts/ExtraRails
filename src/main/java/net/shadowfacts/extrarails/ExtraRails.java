@@ -62,10 +62,13 @@ public class ExtraRails {
 		GameRegistry.addRecipe(new ShapedOreRecipe(blocks.lockingRail, "I I", "ISI", "IsI", 'I', "ingotIron", 'S', "stickWood", 's', Items.SLIME_BALL));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(blocks.directionRail, 2), "I I", "ISI", "IRI", 'I', "ingotIron", 'S', "stickWood", 'R', Items.REPEATER));
 		GameRegistry.addRecipe(new ShapedOreRecipe(blocks.comparatorRail, "I I", "ISI", "ICI", 'I', "ingotIron", 'S', "stickWood", 'C', Items.COMPARATOR));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(blocks.woodenRail, 8), "S S", "SSS", "S S", 'S', "stickWood"));
 
 		if (ERConfig.teleportingRailsEnabled) {
 			GameRegistry.addRecipe(new ShapedOreRecipe(blocks.teleportingRail, "IEI", "ISI", "IEI", 'I', "ingotIron", 'E', "enderpearl", 'S', "stickWood"));
+		}
+
+		if (ERConfig.woodenRailsEnabled) {
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(blocks.woodenRail, 8), "S S", "SSS", "S S", 'S', "stickWood"));
 		}
 	}
 

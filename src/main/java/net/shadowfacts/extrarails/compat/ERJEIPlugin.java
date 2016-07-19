@@ -21,6 +21,9 @@ public class ERJEIPlugin implements IModPlugin {
 		if (!ERConfig.teleportingRailsEnabled) {
 			registry.getJeiHelpers().getItemBlacklist().addItemToBlacklist(new ItemStack(ExtraRails.blocks.teleportingRail));
 		}
+		if (!ERConfig.woodenRailsEnabled) {
+			registry.getJeiHelpers().getItemBlacklist().addItemToBlacklist(new ItemStack(ExtraRails.blocks.woodenRail));
+		}
 	}
 
 	@Override

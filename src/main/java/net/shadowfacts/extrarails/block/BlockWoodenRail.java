@@ -6,6 +6,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.shadowfacts.extrarails.ERConfig;
 import net.shadowfacts.extrarails.ExtraRails;
 import net.shadowfacts.shadowmc.item.ItemModelProvider;
 
@@ -19,7 +20,10 @@ public class BlockWoodenRail extends BlockRail implements ItemModelProvider {
 		setUnlocalizedName("extrarails.woodenRail");
 		setHardness(0.3f);
 		setSoundType(SoundType.WOOD);
-		setCreativeTab(CreativeTabs.TRANSPORTATION);
+
+		if (ERConfig.teleportingRailsEnabled) {
+			setCreativeTab(CreativeTabs.TRANSPORTATION);
+		}
 	}
 
 	@Override

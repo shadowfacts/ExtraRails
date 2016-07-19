@@ -17,6 +17,9 @@ public class ERConfig {
 	@Config.Prop(description = "Enable the Teleporting Rails. If false, the recipe will be disabled and they will be hidden from the creative tab & JEI")
 	public static boolean teleportingRailsEnabled = true;
 
+	@Config.Prop(description = "Enable the Wooden Rails. If false, the recipe will be disabled and they will be hidden from the creative tab & JEI")
+	public static boolean woodenRailsEnabled = true;
+
 	public static void init(File configDir) {
 		config = new Configuration(new File(configDir, "shadowfacts/ExtraRails.cfg"));
 	}
