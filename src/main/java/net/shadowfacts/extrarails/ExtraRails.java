@@ -68,7 +68,7 @@ public class ExtraRails {
 		}
 
 		if (ERConfig.woodenRailsEnabled) {
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(blocks.woodenRail, 8), "S S", "SSS", "S S", 'S', "stickWood"));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(blocks.woodenRail, 8), "P P", "PSP", "P P", 'P', "plankWood", 'S', "stickWood"));
 		}
 	}
 
