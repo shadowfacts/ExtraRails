@@ -15,6 +15,7 @@ import net.shadowfacts.extrarails.gui.GUIHandler;
 import net.shadowfacts.extrarails.item.ModItems;
 import net.shadowfacts.extrarails.network.MessageSetColor;
 import net.shadowfacts.extrarails.proxy.CommonProxy;
+import net.shadowfacts.extrarails.tileentity.TileEntityRailComparator;
 import net.shadowfacts.extrarails.tileentity.TileEntityRailTeleporting;
 
 /**
@@ -49,6 +50,7 @@ public class ExtraRails {
 		registerRecipes();
 
 		GameRegistry.registerTileEntity(TileEntityRailTeleporting.class, "extrarails.teleportingRail");
+		GameRegistry.registerTileEntity(TileEntityRailComparator.class, "extrarails.comparatorRail");
 
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GUIHandler());
 

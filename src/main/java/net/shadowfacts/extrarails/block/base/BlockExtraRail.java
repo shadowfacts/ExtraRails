@@ -1,6 +1,7 @@
 package net.shadowfacts.extrarails.block.base;
 
 import net.minecraft.block.BlockRailBase;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.properties.PropertyEnum;
@@ -30,6 +31,8 @@ public abstract class BlockExtraRail extends BlockRailBase implements ItemModelP
 
 	protected BlockExtraRail(boolean isPowered) {
 		super(isPowered);
+		setHardness(0.7f);
+		setSoundType(SoundType.METAL);
 	}
 
 	@Override
