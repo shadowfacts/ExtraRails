@@ -34,7 +34,7 @@ public class GUIHandler implements IGuiHandler {
 
 		UIFixedView view = new UIFixedView(176, 166, "root");
 
-		UIImage bg = new UIImage(new ResourceLocation(ExtraRails.MODID, "textures/gui/teleportingRail.png"), 176, 177, "bg");
+		UIImage bg = new UIImage(new ResourceLocation(ExtraRails.MODID, "textures/gui/teleporting_rail.png"), 176, 177, "bg");
 		view.add(bg);
 
 		UIFixedView top = new UIFixedView(176, 166 / 2, "top");
@@ -84,7 +84,7 @@ public class GUIHandler implements IGuiHandler {
 
 		view.add(top);
 
-		return new UIBuilder().add(view).style(ExtraRails.MODID + ":teleportingRail").createContainer(new ContainerPlayerInv(pos, player.inventory));
+		return new UIBuilder().add(view).style(ExtraRails.MODID + ":teleporting_rail").createContainer(new ContainerPlayerInv(pos, player.inventory));
 	}
 
 }

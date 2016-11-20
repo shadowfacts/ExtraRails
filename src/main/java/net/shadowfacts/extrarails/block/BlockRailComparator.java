@@ -30,8 +30,8 @@ public class BlockRailComparator extends BlockExtraRail {
 
 	protected BlockRailComparator() {
 		super(true);
-		setRegistryName("comparatorRail");
-		setUnlocalizedName("extrarails.comparatorRail");
+		setRegistryName("comparator_rail");
+		setUnlocalizedName(getRegistryName().toString());
 	}
 
 	private void updatePower(World world, BlockPos pos, EntityMinecart minecart) {
@@ -45,17 +45,17 @@ public class BlockRailComparator extends BlockExtraRail {
 			for (int i = 0; i < handler.getSlots(); i++) {
 				ItemStack stack = handler.getStackInSlot(i);
 				if (stack != null) {
-					filled += stack.stackSize / (float)stack.getMaxStackSize();
+					filled += stack.getCount() / (float)stack.getMaxStackSize();
 					slots++;
 				}
 			}
 			filled = filled / (float)slots;
-			level = MathHelper.floor_float(filled * 14) + (slots > 0 ? 1 : 0);
+			level = MathHelper.floor(filled * 14) + (slots > 0 ? 1 : 0);
 		}
 		TileEntityRailComparator te = (TileEntityRailComparator)world.getTileEntity(pos);
 		if (te.getPower() != level) {
 			te.setPower(level);
-			world.notifyNeighborsOfStateChange(pos, this);
+			world.notifyNeighborsOfStateChange(pos, this, false);
 			world.markBlockRangeForRenderUpdate(pos, pos);
 		}
 	}
@@ -65,7 +65,7 @@ public class BlockRailComparator extends BlockExtraRail {
 		List<? extends EntityMinecart> minecarts = findMinecarts(world, pos);
 		if (minecarts.isEmpty()) {
 			((TileEntityRailComparator)world.getTileEntity(pos)).setPower(0);
-			world.notifyNeighborsOfStateChange(pos, this);
+			world.notifyNeighborsOfStateChange(pos, this, false);
 			world.markBlockRangeForRenderUpdate(pos, pos);
 		} else {
 			updatePower(world, pos, minecarts.get(0));
@@ -111,7 +111,7 @@ public class BlockRailComparator extends BlockExtraRail {
 
 	@Override
 	public void initItemModel() {
-		ExtraRails.proxy.registerItemModel(this, 0, "comparatorRail");
+		ExtraRails.proxy.registerItemModel(this, 0, getRegistryName().getResourcePath());
 	}
 
 	@Nonnull

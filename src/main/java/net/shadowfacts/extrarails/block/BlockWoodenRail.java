@@ -16,8 +16,8 @@ import net.shadowfacts.shadowmc.item.ItemModelProvider;
 public class BlockWoodenRail extends BlockRail implements ItemModelProvider {
 
 	public BlockWoodenRail() {
-		setRegistryName("woodenRail");
-		setUnlocalizedName("extrarails.woodenRail");
+		setRegistryName("wooden_rail");
+		setUnlocalizedName(getRegistryName().toString());
 		setHardness(0.3f);
 		setSoundType(SoundType.WOOD);
 
@@ -33,7 +33,7 @@ public class BlockWoodenRail extends BlockRail implements ItemModelProvider {
 
 	@Override
 	public void initItemModel() {
-		ExtraRails.proxy.registerItemModel(this, 0, "woodenRail");
+		ExtraRails.proxy.registerItemModel(this, 0, getRegistryName().getResourcePath());
 	}
 
 }

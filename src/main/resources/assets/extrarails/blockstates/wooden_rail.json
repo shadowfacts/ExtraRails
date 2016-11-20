@@ -2,7 +2,7 @@
 	"forge_marker": 1,
 	"defaults": {
 		"textures": {
-			"rail": "extrarails:blocks/woodenRail/normal"
+			"rail": "extrarails:blocks/wooden_rail/normal"
 		}
 	},
 	"variants": {
@@ -31,27 +31,27 @@
 			"south_east": {
 				"model": "rail_curved",
 				"textures": {
-					"rail": "extrarails:blocks/woodenRail/curved"
+					"rail": "extrarails:blocks/wooden_rail/curved"
 				}
 			},
 			"south_west": {
 				"model": "rail_curved",
 				"textures": {
-					"rail": "extrarails:blocks/woodenRail/curved"
+					"rail": "extrarails:blocks/wooden_rail/curved"
 				},
 				"y": 90
 			},
 			"north_west": {
 				"model": "rail_curved",
 				"textures": {
-					"rail": "extrarails:blocks/woodenRail/curved"
+					"rail": "extrarails:blocks/wooden_rail/curved"
 				},
 				"y": 180
 			},
 			"north_east": {
 				"model": "rail_curved",
 				"textures": {
-					"rail": "extrarails:blocks/woodenRail/curved"
+					"rail": "extrarails:blocks/wooden_rail/curved"
 				},
 				"y": 270
 			}

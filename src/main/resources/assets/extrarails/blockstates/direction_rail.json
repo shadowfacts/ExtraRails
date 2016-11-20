@@ -23,12 +23,12 @@
 		"powered": {
 			"true": {
 				"textures": {
-					"rail": "extrarails:blocks/directionRail/active"
+					"rail": "extrarails:blocks/direction_rail/active"
 				}
 			},
 			"false": {
 				"textures": {
-					"rail": "extrarails:blocks/directionRail/inactive"
+					"rail": "extrarails:blocks/direction_rail/inactive"
 				}
 			}
 		}

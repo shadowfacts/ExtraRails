@@ -14,13 +14,13 @@ import net.shadowfacts.extrarails.block.base.BlockExtraRailPowered;
 public class BlockRailDirection extends BlockExtraRailPowered {
 
 	public BlockRailDirection() {
-		setUnlocalizedName("extrarails.directionRail");
-		setRegistryName("directionRail");
+		setRegistryName("direction_rail");
+		setUnlocalizedName(getRegistryName().toString());
 	}
 
 	@Override
 	public void initItemModel() {
-		ExtraRails.proxy.registerItemModel(this, 0, "directionRail");
+		ExtraRails.proxy.registerItemModel(this, 0, getRegistryName().getResourcePath());
 	}
 
 	@Override

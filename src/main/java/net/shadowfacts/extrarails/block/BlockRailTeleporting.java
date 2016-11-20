@@ -26,8 +26,8 @@ public class BlockRailTeleporting extends BlockExtraRail {
 
 	protected BlockRailTeleporting() {
 		super(true);
-		setUnlocalizedName("extrarails.teleportingRail");
-		setRegistryName("teleportingRail");
+		setRegistryName("teleporting_rail");
+		setUnlocalizedName(getRegistryName().toString());
 
 		if (!ERConfig.teleportingRailsEnabled) {
 			setCreativeTab(null);
@@ -57,7 +57,7 @@ public class BlockRailTeleporting extends BlockExtraRail {
 	}
 
 	@Override
-	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
+	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing heldItem, float side, float hitX, float hitY) {
 		player.openGui(ExtraRails.instance, 0, world, pos.getX(), pos.getY(), pos.getZ());
 		return true;
 	}
@@ -85,7 +85,7 @@ public class BlockRailTeleporting extends BlockExtraRail {
 
 	@Override
 	public void initItemModel() {
-		ExtraRails.proxy.registerItemModel(this, 0, "teleportingRail");
+		ExtraRails.proxy.registerItemModel(this, 0, getRegistryName().getResourcePath());
 	}
 
 	@Nonnull

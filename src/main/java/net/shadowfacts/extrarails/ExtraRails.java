@@ -21,7 +21,7 @@ import net.shadowfacts.extrarails.tileentity.TileEntityRailTeleporting;
 /**
  * @author shadowfacts
  */
-@Mod(modid = ExtraRails.MODID, name = ExtraRails.NAME, version = ExtraRails.VERSION, acceptedMinecraftVersions = "[1.10.2]", dependencies = "required-after:shadowmc@[3.4.2,);")
+@Mod(modid = ExtraRails.MODID, name = ExtraRails.NAME, version = ExtraRails.VERSION, dependencies = "required-after:shadowmc@[3.4.2,);")
 public class ExtraRails {
 
 	public static final String MODID = "ExtraRails";

@@ -33,7 +33,7 @@ public abstract class BlockExtraRailPowered extends BlockExtraRail {
 
 		if (flag1 != flag) {
 			world.setBlockState(pos, state.withProperty(POWERED, flag1), 3);
-			world.notifyNeighborsOfStateChange(pos.down(), this);
+			world.notifyNeighborsOfStateChange(pos.down(), this, false);
 		}
 	}
 

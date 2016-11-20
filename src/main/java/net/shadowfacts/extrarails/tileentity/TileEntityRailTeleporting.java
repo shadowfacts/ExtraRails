@@ -48,7 +48,7 @@ public class TileEntityRailTeleporting extends BaseTileEntity {
 			EntityMinecart entity = (EntityMinecart)e;
 			Collection<Pos> positions = TeleportingManager.get(color);
 			Optional<Pos> pos = positions.stream()
-					.filter(p -> p.dim != worldObj.provider.getDimension() || (!p.pos.equals(this.pos)))
+					.filter(p -> p.dim != world.provider.getDimension() || (!p.pos.equals(this.pos)))
 					.findFirst();
 			if (pos.isPresent()) {
 				Pos dest = pos.get();
@@ -85,16 +85,16 @@ public class TileEntityRailTeleporting extends BaseTileEntity {
 	}
 
 	public void setColor(int color) {
-		TeleportingManager.remove(this.color, worldObj.provider.getDimension(), pos);
-		TeleportingManager.add(color, worldObj.provider.getDimension(), pos);
+		TeleportingManager.remove(this.color, world.provider.getDimension(), pos);
+		TeleportingManager.add(color, world.provider.getDimension(), pos);
 		this.color = color;
 		markDirty();
 	}
 
 	@Override
 	public void onLoad() {
-		if (!worldObj.isRemote) {
-			TeleportingManager.add(color, worldObj.provider.getDimension(), pos);
+		if (!world.isRemote) {
+			TeleportingManager.add(color, world.provider.getDimension(), pos);
 		} else {
 			ShadowMC.network.sendToServer(new PacketRequestTEUpdate(this));
 		}
@@ -106,7 +106,7 @@ public class TileEntityRailTeleporting extends BaseTileEntity {
 	}
 
 	public void remove() {
-		TeleportingManager.remove(color, worldObj.provider.getDimension(), pos);
+		TeleportingManager.remove(color, world.provider.getDimension(), pos);
 	}
 
 }

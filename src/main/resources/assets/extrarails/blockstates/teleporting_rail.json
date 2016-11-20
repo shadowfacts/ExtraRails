@@ -3,7 +3,7 @@
 	"defaults": {
 		"model": "rail_flat",
 		"textures": {
-			"rail": "extrarails:blocks/comparatorRail"
+			"rail": "extrarails:blocks/teleporting_rail"
 		}
 	},
 	"variants": {

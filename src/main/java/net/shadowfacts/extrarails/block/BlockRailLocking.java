@@ -17,13 +17,13 @@ import java.util.Random;
 public class BlockRailLocking extends BlockExtraRailPowered {
 
 	public BlockRailLocking() {
-		setUnlocalizedName("extrarails.lockingRail");
-		setRegistryName("lockingRail");
+		setRegistryName("locking_rail");
+		setUnlocalizedName(getRegistryName().toString());
 	}
 
 	@Override
 	public void initItemModel() {
-		ExtraRails.proxy.registerItemModel(this, 0, "lockingRail");
+		ExtraRails.proxy.registerItemModel(this, 0, getRegistryName().getResourcePath());
 	}
 
 	@Override
