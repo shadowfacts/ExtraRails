@@ -24,7 +24,7 @@ import net.shadowfacts.extrarails.tileentity.TileEntityRailTeleporting;
 @Mod(modid = ExtraRails.MODID, name = ExtraRails.NAME, version = ExtraRails.VERSION, dependencies = "required-after:shadowmc@[3.4.2,);")
 public class ExtraRails {
 
-	public static final String MODID = "ExtraRails";
+	public static final String MODID = "extrarails";
 	public static final String NAME = "Extra Rails";
 	public static final String VERSION = "@VERSION@";
 
