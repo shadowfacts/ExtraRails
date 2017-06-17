@@ -1,0 +1,25 @@
+{
+	"type": "forge:ore_shaped",
+	"pattern": [
+		"I I",
+		"ISI",
+		"IsI"
+	],
+	"key": {
+		"I": {
+			"type": "forge:ore_dict",
+			"ore": "ingotIron"
+		},
+		"S": {
+			"type": "forge:ore_dict",
+			"ore": "stickWood"
+		},
+		"s": {
+			"type": "forge:ore_dict",
+			"ore": "slimeball"
+		}
+	},
+	"result": {
+		"item": "extrarails:locking_rail"
+	}
+}

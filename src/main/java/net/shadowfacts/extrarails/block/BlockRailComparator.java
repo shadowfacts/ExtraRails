@@ -82,6 +82,7 @@ public class BlockRailComparator extends BlockExtraRail {
 	}
 
 	@Override
+	@Deprecated
 	public boolean canProvidePower(IBlockState state) {
 		return true;
 	}
@@ -116,6 +117,7 @@ public class BlockRailComparator extends BlockExtraRail {
 
 	@Nonnull
 	@Override
+	@Deprecated
 	public IBlockState getStateFromMeta(int meta) {
 		EnumRailDirection shape = EnumRailDirection.byMetadata(meta & 1);
 		EnumFacing facing = EnumFacing.getHorizontal(meta >> 1);

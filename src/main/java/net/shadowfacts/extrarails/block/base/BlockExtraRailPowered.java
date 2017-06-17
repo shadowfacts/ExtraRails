@@ -90,6 +90,7 @@ public abstract class BlockExtraRailPowered extends BlockExtraRail {
 
 	@Nonnull
 	@Override
+	@Deprecated
 	public IBlockState getStateFromMeta(int meta) {
 		boolean powered = (meta & 1) == 1;
 		EnumRailDirection shape = EnumRailDirection.byMetadata((meta >> 1) & 1);

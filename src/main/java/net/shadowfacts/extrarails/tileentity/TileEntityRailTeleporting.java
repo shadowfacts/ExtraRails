@@ -55,7 +55,7 @@ public class TileEntityRailTeleporting extends BaseTileEntity {
 
 				if (entity.dimension != dest.dim) return;
 
-				WorldServer newWorld = FMLCommonHandler.instance().getMinecraftServerInstance().worldServerForDimension(dest.dim);
+				WorldServer newWorld = FMLCommonHandler.instance().getMinecraftServerInstance().getWorld(dest.dim);
 
 				IBlockState state = newWorld.getBlockState(dest.pos);
 				if (state.getBlock() != ExtraRails.blocks.teleportingRail) return;

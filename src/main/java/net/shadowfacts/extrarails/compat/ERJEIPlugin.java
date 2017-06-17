@@ -11,15 +11,15 @@ import javax.annotation.Nonnull;
  * @author shadowfacts
  */
 @JEIPlugin
-public class ERJEIPlugin extends BlankModPlugin {
+public class ERJEIPlugin implements IModPlugin {
 
 	@Override
 	public void register(@Nonnull IModRegistry registry) {
 		if (!ERConfig.teleportingRailsEnabled) {
-			registry.getJeiHelpers().getItemBlacklist().addItemToBlacklist(new ItemStack(ExtraRails.blocks.teleportingRail));
+			registry.getJeiHelpers().getIngredientBlacklist().addIngredientToBlacklist(new ItemStack(ExtraRails.blocks.teleportingRail));
 		}
 		if (!ERConfig.woodenRailsEnabled) {
-			registry.getJeiHelpers().getItemBlacklist().addItemToBlacklist(new ItemStack(ExtraRails.blocks.woodenRail));
+			registry.getJeiHelpers().getIngredientBlacklist().addIngredientToBlacklist(new ItemStack(ExtraRails.blocks.woodenRail));
 		}
 	}
 

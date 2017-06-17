@@ -1,0 +1,24 @@
+{
+	"type": "forge:ore_shaped",
+	"pattern": [
+		"I I",
+		"ISI",
+		"ICI"
+	],
+	"key": {
+		"I": {
+			"type": "forge:ore_dict",
+			"ore": "ingotIron"
+		},
+		"S": {
+			"type": "forge:ore_dict",
+			"ore": "stickWood"
+		},
+		"C": {
+			"item": "minecraft:comparator"
+		}
+	},
+	"result": {
+		"item": "extrarails:comparator_rail"
+	}
+}

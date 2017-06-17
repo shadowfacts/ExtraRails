@@ -25,9 +25,9 @@ import java.util.List;
  */
 public abstract class BlockExtraRail extends BlockRailBase implements ItemModelProvider {
 
-	public static final PropertyEnum<EnumRailDirection> SHAPE = PropertyEnum.create("shape", BlockRailBase.EnumRailDirection.class, dir -> {
-		return dir == EnumRailDirection.NORTH_SOUTH || dir == EnumRailDirection.EAST_WEST;
-	});
+	public static final PropertyEnum<EnumRailDirection> SHAPE = PropertyEnum.create("shape", BlockRailBase.EnumRailDirection.class, dir ->
+		dir == EnumRailDirection.NORTH_SOUTH || dir == EnumRailDirection.EAST_WEST
+	);
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
 	protected BlockExtraRail(boolean isPowered) {

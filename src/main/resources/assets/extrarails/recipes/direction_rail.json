@@ -1,0 +1,25 @@
+{
+	"type": "forge:ore_shaped",
+	"pattern": [
+		"I I",
+		"ISI",
+		"IRI"
+	],
+	"key": {
+		"I": {
+			"type": "forge:ore_dict",
+			"ore": "ingotIron"
+		},
+		"S": {
+			"type": "forge:ore_dict",
+			"ore": "stickWood"
+		},
+		"R": {
+			"item": "minecraft:repeater"
+		}
+	},
+	"result": {
+		"item": "extrarails:direction_rail",
+		"count": 2
+	}
+}

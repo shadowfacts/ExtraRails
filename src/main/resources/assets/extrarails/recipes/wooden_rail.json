@@ -1,0 +1,28 @@
+{
+	"conditions": [
+		{
+			"type": "extrarails:config",
+			"config": "woodenRailsEnabled"
+		}
+	],
+	"type": "forge:ore_shaped",
+	"pattern": [
+		"P P",
+		"PSP",
+		"P P"
+	],
+	"key": {
+		"P": {
+			"type": "forge:ore_dict",
+			"ore": "plankWood"
+		},
+		"S": {
+			"type": "forge:ore_dict",
+			"ore": "stickWood"
+		}
+	},
+	"result": {
+		"item": "extrarails:wooden_rail",
+		"count": 8
+	}
+}

@@ -43,7 +43,7 @@ public class MessageSetColor implements IMessage {
 
 		@Override
 		public IMessage onMessage(MessageSetColor message, MessageContext ctx) {
-			World world = FMLCommonHandler.instance().getMinecraftServerInstance().worldServerForDimension(message.dimension);
+			World world = FMLCommonHandler.instance().getMinecraftServerInstance().getWorld(message.dimension);
 			TileEntity te = world.getTileEntity(message.pos);
 			if (te instanceof TileEntityRailTeleporting) {
 				TileEntityRailTeleporting rail = (TileEntityRailTeleporting)te;

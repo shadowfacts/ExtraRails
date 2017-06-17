@@ -1,0 +1,31 @@
+{
+	"conditions": [
+		{
+			"type": "extrarails:config",
+			"config": "teleportingRailsEnabled"
+		}
+	],
+	"type": "forge:ore_shaped",
+	"pattern": [
+		"IEI",
+		"ISI",
+		"IEI"
+	],
+	"key": {
+		"I": {
+			"type": "forge:ore_dict",
+			"ore": "ingotIron"
+		},
+		"E": {
+			"type": "forge:ore_dict",
+			"ore": "enderpearl"
+		},
+		"S": {
+			"type": "forge:ore_dict",
+			"ore": "stickWood"
+		}
+	},
+	"result": {
+		"item": "extrarails:teleporting_rail"
+	}
+}
