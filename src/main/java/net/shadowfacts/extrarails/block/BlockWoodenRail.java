@@ -4,6 +4,8 @@ import net.minecraft.block.BlockRail;
 import net.minecraft.block.SoundType;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityMinecart;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.shadowfacts.extrarails.ERConfig;
@@ -24,6 +26,10 @@ public class BlockWoodenRail extends BlockRail implements ItemModelProvider {
 		if (ERConfig.teleportingRailsEnabled) {
 			setCreativeTab(CreativeTabs.TRANSPORTATION);
 		}
+	}
+
+	public Item createItemBlock() {
+		return new ItemBlock(this).setRegistryName(getRegistryName());
 	}
 
 	@Override

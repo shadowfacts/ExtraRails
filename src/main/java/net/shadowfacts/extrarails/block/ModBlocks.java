@@ -3,21 +3,12 @@ package net.shadowfacts.extrarails.block;
 /**
  * @author shadowfacts
  */
-public class ModBlocks extends net.shadowfacts.shadowmc.block.ModBlocks {
+public class ModBlocks {
 
-	public BlockRailLocking lockingRail;
-	public BlockRailDirection directionRail;
-	public BlockRailTeleporting teleportingRail;
-	public BlockRailComparator comparatorRail;
-	public BlockWoodenRail woodenRail;
-
-	@Override
-	public void init() {
-		lockingRail = register(new BlockRailLocking());
-		directionRail = register(new BlockRailDirection());
-		teleportingRail = register(new BlockRailTeleporting());
-		comparatorRail = register(new BlockRailComparator());
-		woodenRail = register(new BlockWoodenRail());
-	}
+	public BlockRailLocking lockingRail = new BlockRailLocking();
+	public BlockRailDirection directionRail = new BlockRailDirection();
+	public BlockRailTeleporting teleportingRail = new BlockRailTeleporting();
+	public BlockRailComparator comparatorRail = new BlockRailComparator();
+	public BlockWoodenRail woodenRail = new BlockWoodenRail();
 
 }
