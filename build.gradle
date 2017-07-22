@@ -50,10 +50,13 @@ processResources {
 repositories {
 	maven {
 		name "shadowfacts"
-		url "http://mvn.rx14.co.uk/shadowfacts/"
+		url "http://maven.shadowfacts.net/"
 	}
 	maven {
 		url "http://dvs1.progwml6.com/files/maven"
+	}
+	maven {
+		url "https://dl.bintray.com/kotlin/kotlinx/"
 	}
 }
 
